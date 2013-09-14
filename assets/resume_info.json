@@ -1,0 +1,130 @@
+{ 
+	"PersonalInfo" : {
+    "Name": "Christopher \"Vinnie\" Vendemia",
+    "Address" : "1036 Mt. Airy Rd Davidsonville, MD 21035",
+   	"Email" : "vvendemia1@gmail.com",
+    "Phone" : "(410) 533 – 1965"
+	},
+	"Education" : {
+    	"School" : "University of Maryland, College Park, College of Behavioral and Social Sciences",
+    	"GraduationInfo" : "Undergraduate student (expected graduation date: May 2014)",
+    	"Majors" : [
+    		{
+    			"majorName" : "Economics",
+    			"description" : "Related course work: accounting, business statistics, macro/micro economics"
+    		},
+    		{
+    			"majorName" : "Computer Science",
+    			"description" : "Related coursework: programming languages, algorithm design and interpretation, project management techniques, Networks, System Architecture"
+    		}
+    	]
+    },
+    "WorkExperience" : [
+    {
+        "JobTitle" : "Mobile Applications Developer Internship, AOL Inc.",
+        "TimeFrame" : "(May 2013 – August 2013)",
+        "Descriptions" : [
+        	{
+        		"descriptionText" : "Designed and built stand-alone application for the android platform."
+        	},
+        	{
+        		"descriptionText" : "Worked closely with Moviefone and Aol.com teams (android) to learn professional development strategies and techniques"
+        	}
+        ]
+    },
+    {
+        "JobTitle" : "Administrative Assistant, C.V. Systems Inc.",
+        "TimeFrame" : "(May 2012 – August 2012)",
+        "Descriptions" : [
+        	{
+        		"descriptionText" : "Worked closely with President of company.  Tasks included: Developing scheduling software to increase work efficiency."
+        	},
+        	{
+        		"descriptionText" : "Managing, maintaining computers, creating inventory system, warehouse upkeep, field work (pre-wire of homes, home finals, Audio/Video system installation)."
+        	}
+        ]
+    }
+    ], 
+    "Accomplishments" : [
+    	{
+    	"Title" : "Founder of Mobile App Developers Club (M.A.D)",
+    	"TimeFrame" : "(February 2012 – Present)",
+    	"Description" : "OCP recognized club at University of Maryland.  I lead weekly meeting where techniques and strategies of mobile development are taught and discussed.  Also discuss trends and recent news in mobile programming community.  Aim to develop mobile applications to benefit the students on campus."
+    	},
+    	{
+    	"Title" : "Coca-Cola Climate Ambassadors App",
+    	"TimeFrame" : "Released September, 2013",
+    	"Description" : "Informational App designed to provide documents and resources to Coca-Cola employees, at a conference in Germany."
+    	},  
+    	{
+    	"Title" : "MovieBox",
+    	"TimeFrame" : "May - August 2013",
+    	"Description" : "Android app that displays location of nearby Redbox kiosks, and provides exclusive movie content on the movies at each location. (Designed during AOL Internship)"
+    	},  
+    	{
+    	"Title" : "UMD Trivia",
+    	"TimeFrame" : "Released 05/2012",
+    	"Description" : "A University of Maryland Trivia Game."
+    	},
+    	{
+    	"Title" : "Magazi-Ag.com",
+    	"TimeFrame" : "Released June 2013",
+    	"Description" : "Business Website for magazi-ag, a home remodeling company based out of Bethesda, Md."
+    	},
+    	{
+    	"Title" : "CV Systems Scheduling Software",
+    	"TimeFrame" : "August 2012",
+    	"Description" : "A mobile and server side scheduling software that will allow mobile users to log hours, and server admin to track and report hours worked."
+    	},           	
+    	{
+    	"Title" : "MobileAppDevelopersClub.com",
+    	"TimeFrame" : "August 2012",
+    	"Description" : "Website for The Club that I founded."
+    	},
+    	{
+    	"Title" : "Code for Community, 2nd Place",
+    	"TimeFrame" : "Spring 2013",
+    	"Description" : "A coding challenge at the University of Maryland where students were asked to create an application to help benefit the local communities."
+    	},   
+    	{
+    	"Title" : "Penn Apps Attendee",
+    	"TimeFrame" : "September 2013",
+    	"Description" : "Attended the Penn Apps Hackathon, and helped to build a mobile application that will allow users to log into a system, and see an up to the second info on their open tab at a bar or resteraunt."
+    	},  
+    	{
+    	"Title" : "CV Systems Package Master",
+    	"TimeFrame" : "August 2012",
+    	"Description" : "Allows the user to find all parts for a given security package, and calculate total cost based on labor and miscellaneous expenses"
+    	} 	
+    ],
+    "SkillsAbilities" : [
+    {
+         "skill" : "JAVA",
+         "label" : "Multithreading, Android applications, Sorting Algorithms, GUI Functionality "
+    },
+    {
+         "skill" : "C",
+         "label" : "File-system creation, Simple shell design, multithreaded sorting algorithms, Networks"
+    },
+    {
+         "skill" : "RUBY/ RUBY ON RAILS",
+         "label" : "Multithreading, Text processing, Finite Automata interpreter, Music Streaming app"
+    },
+    {
+         "skill" : "MYSQL",
+         "label" : ""
+    },
+    {
+         "skill" : "HTML",
+         "label" : ""
+    },
+    {
+         "skill" : "XML",
+         "label" : ""
+    },
+    {
+         "skill" : "PHP",
+         "label" : "HTML parsing, Web crawling, MYSQL Database access, Web based Music Streaming"
+    }
+    ]
+}
