@@ -44,8 +44,9 @@ public class MainActivity extends Activity {
 	List<WorkExperience> workExperience;
 	List<Accomplishments> accomplishments;
 	List<SkillsAbilities> skillsAbilities;
-
-	@InjectView(R.id.myName) TextView myName;
+	
+	//I changed this variable name
+	@InjectView(R.id.myName) TextView thisIsMyName;
 
 	@InjectView(R.id.address) 
 	TextView address;
@@ -126,7 +127,7 @@ public class MainActivity extends Activity {
 
 		PersonalInfo info = personalInfo;
 		//Personal Info
-		myName.setText(personalInfo.getName());
+		thisIsMyName.setText(personalInfo.getName());
 		address.setText(personalInfo.getAddress());
 		phone.setText(personalInfo.getPhone());
 		email.setText(personalInfo.getEmial());
