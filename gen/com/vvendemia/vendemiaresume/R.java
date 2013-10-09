@@ -26,7 +26,7 @@ public final class R {
     public static final class id {
         public static final int accomplishments_header=0x7f08000d;
         public static final int accomplishments_layout=0x7f08000e;
-        public static final int action_settings=0x7f080014;
+        public static final int action_settings=0x7f080015;
         public static final int address=0x7f080004;
         public static final int description=0x7f080011;
         public static final int descriptions=0x7f080002;
@@ -34,15 +34,16 @@ public final class R {
         public static final int email=0x7f080006;
         public static final int grad_info=0x7f080009;
         public static final int header=0x7f080000;
-        public static final int job_title=0x7f080012;
+        public static final int job_title=0x7f080013;
         public static final int major_layout=0x7f08000a;
         public static final int myName=0x7f080003;
+        public static final int my_webview=0x7f080012;
         public static final int phone=0x7f080005;
         public static final int school=0x7f080008;
         public static final int skills_abilities_layout=0x7f080010;
         public static final int skills_header=0x7f08000f;
         public static final int timeFrame=0x7f080001;
-        public static final int time_frame=0x7f080013;
+        public static final int time_frame=0x7f080014;
         public static final int work_experience_header=0x7f08000b;
         public static final int work_experience_layout=0x7f08000c;
     }
@@ -50,8 +51,9 @@ public final class R {
         public static final int accomplishments=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int major_description=0x7f030002;
-        public static final int work_descriptions=0x7f030003;
-        public static final int work_experience=0x7f030004;
+        public static final int webview=0x7f030003;
+        public static final int work_descriptions=0x7f030004;
+        public static final int work_experience=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f070000;

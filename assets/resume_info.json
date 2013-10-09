@@ -60,6 +60,11 @@
     	"Title" : "MovieBox",
     	"TimeFrame" : "May - August 2013",
     	"Description" : "Android app that displays location of nearby Redbox kiosks, and provides exclusive movie content on the movies at each location. (Designed during AOL Internship)"
+    	},
+    	{
+    	"Title" : "Shellp",
+    	"TimeFrame" : "Released 09/2012",
+    	"Description" : "An app designed by the MAD club, designed to help students on an everyday basis.  Features include a map to get around, local weather report of college park, and a trivia game to test their knowledge of the University."
     	},  
     	{
     	"Title" : "UMD Trivia",

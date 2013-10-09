@@ -6,9 +6,9 @@ import java.util.List;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.ComponentName;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -34,7 +34,7 @@ import com.vvendemia.vendemiaresume.models.SkillsAbilities;
 import com.vvendemia.vendemiaresume.models.WorkExperience;
 
 public class MainActivity extends Activity {
-	
+
 	public static String TAG = "MainActivity";
 
 	LayoutInflater inflater;
@@ -70,11 +70,14 @@ public class MainActivity extends Activity {
 
 	@InjectView(R.id.accomplishments_layout)
 	LinearLayout accomplishmentsLayout;
-	
+
 	@InjectView(R.id.skills_abilities_layout)
 	LinearLayout skillsAbsLayout;
-	
+
 	Activity currActivity;
+	private final String WEBSITE_URL = "https://www.mobileappdevelopersclub.com";
+	private String MAGAZI = "http://magazi-ag.com/#!/";
+	
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +87,7 @@ public class MainActivity extends Activity {
 		Views.inject(this);
 		inflater = getLayoutInflater();
 		currActivity = this;
-		
+
 		fetchResumeData();
 	}
 
@@ -138,13 +141,13 @@ public class MainActivity extends Activity {
 
 		//Set up accomplishmets 
 		setUpAccomplishments();
-		
+
 		//Set up skills/ Abilities 
 		setUpSkillsAbilities();
 
 
 	}
-	
+
 	@SuppressLint("NewApi")
 	private void setUpSkillsAbilities() {
 
@@ -167,85 +170,127 @@ public class MainActivity extends Activity {
 			Accomplishments curr = accomplishments.get(i);
 			LinearLayout accomps = (LinearLayout) inflater.inflate(R.layout.accomplishments, null);
 			((TextView)accomps.findViewById(R.id.header)).setText(curr.getTitle());
-			
-			//Special Feature, have package name for Moviebox
-			if(curr.getTitle().equals("MovieBox")) {
-				((TextView)accomps.findViewById(R.id.header)).setOnTouchListener(new OnTouchListener(){
-					
-					@Override
-					public boolean onTouch(View arg0, MotionEvent arg1) {
-						Log.d(TAG, "Touched Moviebox");
-						Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage("com.aol.mobile.moviefonetogo");
-						startActivity(LaunchIntent);
-						return true;
-					}});
-			}
-			
-			
+			createCustomTitleListeners(curr.getTitle(), ((TextView)accomps.findViewById(R.id.header)) );
 			((TextView)accomps.findViewById(R.id.timeFrame)).setText(curr.getTimeFrame());
 			((TextView)accomps.findViewById(R.id.descriptions)).setText(curr.getDescription());
 			accomplishmentsLayout.addView(accomps);
 		}
 	}
 
+	private void createCustomTitleListeners(String title, TextView header) {
+		//Special Feature, have package name for Moviebox
+		if( title.equals("MovieBox")) {
+			header.setOnTouchListener(new OnTouchListener(){
 
-		@SuppressLint("NewApi")
-		private void setUpExperienceView() {
+				@Override
+				public boolean onTouch(View arg0, MotionEvent arg1) {
+					Log.d(TAG, "Touched Moviebox");
+					Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage("com.aol.mobile.moviefonetogo");
+					startActivity(LaunchIntent);
+					return true;
+				}});
+		} else if (title.equals("Shellp")) {
+			header.setOnTouchListener(new OnTouchListener(){
 
-			for(int i = 0 ; i < workExperience.size() ; i++) {
-				WorkExperience job = workExperience.get(i);;
-				LinearLayout workExperiences = (LinearLayout) inflater.inflate(R.layout.work_experience , null);
-				((TextView)workExperiences.findViewById(R.id.job_title)).setText(job.getJobTitle());
-				((TextView)workExperiences.findViewById(R.id.time_frame)).setText(job.getTimeFrame());
-				LinearLayout jobDescriptions = ((LinearLayout)workExperiences.findViewById(R.id.descriptions));
+				@Override
+				public boolean onTouch(View arg0, MotionEvent arg1) {
+					Log.d(TAG, "Touched Shellp");
+					Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage("com.mobileappdevelopersclub.shellp");
+					startActivity(LaunchIntent);
+					return true;
+				}});
+		} else if(title.equals("Founder of Mobile App Developers Club (M.A.D)")) {
+			header.setOnTouchListener(new OnTouchListener(){
 
-				List<Descriptions> descriptions = job.getDescriptions();
-				for(int j =0 ; j < descriptions.size(); j++) {
-					TextView text = new TextView(this);
-					text.setText(descriptions.get(j).getDescription());
-					text.setPadding(0, 2, 0, 0);
-					jobDescriptions.addView(text);
-				}
+				@Override
+				public boolean onTouch(View arg0, MotionEvent arg1) {
+					Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(WEBSITE_URL));
+					startActivity(browserIntent);
+					return true;
+				}});
+		} else if(title.equals("UMD Trivia")) {
+			header.setOnTouchListener(new OnTouchListener(){
 
-				experienceLayout.addView(workExperiences);
+				@Override
+				public boolean onTouch(View arg0, MotionEvent arg1) {
+					Log.d(TAG, "Touched Shellp");
+					Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage("vinnie.vendemia.namespace");
+					startActivity(LaunchIntent);
+					return true;
+				}});
+
+		} else if(title.equals("Magazi-Ag.com")) {
+			header.setOnTouchListener(new OnTouchListener(){
+
+				@Override
+				public boolean onTouch(View arg0, MotionEvent arg1) {
+					Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(MAGAZI));
+					startActivity(browserIntent);
+					return true;
+				}});
+		}else {
+			//Do Nothing
+		}
+	}
+
+
+	@SuppressLint("NewApi")
+	private void setUpExperienceView() {
+
+		for(int i = 0 ; i < workExperience.size() ; i++) {
+			WorkExperience job = workExperience.get(i);;
+			LinearLayout workExperiences = (LinearLayout) inflater.inflate(R.layout.work_experience , null);
+			((TextView)workExperiences.findViewById(R.id.job_title)).setText(job.getJobTitle());
+			((TextView)workExperiences.findViewById(R.id.time_frame)).setText(job.getTimeFrame());
+			LinearLayout jobDescriptions = ((LinearLayout)workExperiences.findViewById(R.id.descriptions));
+
+			List<Descriptions> descriptions = job.getDescriptions();
+			for(int j =0 ; j < descriptions.size(); j++) {
+				TextView text = new TextView(this);
+				text.setText(descriptions.get(j).getDescription());
+				text.setPadding(0, 2, 0, 0);
+				jobDescriptions.addView(text);
 			}
 
-		}
-
-
-
-		@SuppressLint("NewApi")
-		private void setUpMajorsView() {
-			List<Majors> myMajors = education.getMajors();
-
-			for(int i = 0 ; i < myMajors.size(); i++) {
-				Majors major = myMajors.get(i);
-				if(major != null) {
-					LinearLayout majors = (LinearLayout) inflater.inflate(R.layout.major_description, null);
-					((TextView)majors.findViewById(R.id.header)).setText(major.getName());
-					((TextView)majors.findViewById(R.id.description)).setText(major.getDescription());
-					majorLayout.addView(majors);
-				}
-			}
-
-		}
-
-		public String parseAsString(String filename) throws IOException {
-
-			AssetManager assetManager = this.getAssets();
-
-			InputStream in = assetManager.open(filename);
-
-			int size = in.available();
-			byte[] buffer = new byte[size];
-
-			in.read(buffer);
-			in.close();
-
-			String fileAsString = new String(buffer);
-
-			return fileAsString;
-
+			experienceLayout.addView(workExperiences);
 		}
 
 	}
+
+
+
+	@SuppressLint("NewApi")
+	private void setUpMajorsView() {
+		List<Majors> myMajors = education.getMajors();
+
+		for(int i = 0 ; i < myMajors.size(); i++) {
+			Majors major = myMajors.get(i);
+			if(major != null) {
+				LinearLayout majors = (LinearLayout) inflater.inflate(R.layout.major_description, null);
+				((TextView)majors.findViewById(R.id.header)).setText(major.getName());
+				((TextView)majors.findViewById(R.id.description)).setText(major.getDescription());
+				majorLayout.addView(majors);
+			}
+		}
+
+	}
+
+	public String parseAsString(String filename) throws IOException {
+
+		AssetManager assetManager = this.getAssets();
+
+		InputStream in = assetManager.open(filename);
+
+		int size = in.available();
+		byte[] buffer = new byte[size];
+
+		in.read(buffer);
+		in.close();
+
+		String fileAsString = new String(buffer);
+
+		return fileAsString;
+
+	}
+
+}
