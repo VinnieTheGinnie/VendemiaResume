@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 	List<Accomplishments> accomplishments;
 	List<SkillsAbilities> skillsAbilities;
 	
-	//I changed this variable name
+	// I changed this variable name
 	@InjectView(R.id.myName) TextView thisIsMyName;
 
 	@InjectView(R.id.address) 
